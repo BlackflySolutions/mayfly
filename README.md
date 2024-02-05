@@ -1,12 +1,13 @@
 # mayfly
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
 
 This is an [extension for CiviCRM](https://docs.civicrm.org/sysadmin/en/latest/customize/extensions/), licensed under [AGPL-3.0](LICENSE.txt).
 
+It's a work-in-progress of a 'one-click civi site generator' tool.
+
 ## Getting Started
 
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
+Make sure you enable the civirules extension first.
 
 ## Known Issues
 
-(* FIXME *)
+Work-in-progress means ...
