@@ -31,10 +31,19 @@ class VsiteExport extends \Civi\Api4\Generic\AbstractAction {
   ->setLimit(1)
   ->execute()->first();
     // Civi::log()->debug($membership);
-    file_put_contents('/var/www/vsite/test.txt', json_encode($membership));
+    $slug = $membership['Vsite.Name'];
+    if (empty($slug)) {
+      $slug = 'mayfly-'.$membership['id'];
+      $results = \Civi\Api4\Membership::update(TRUE)
+        ->addValue('Vsite.Name', $slug)
+        ->addWhere('id', '=', $membership['id'])
+        ->execute();
+      $membership['Vsite.Name'] = $slug;
+    }
+    file_put_contents('/var/www/vsite/'.$slug.'.json', json_encode($membership));
     $result[] = [
 	    'exported' => $membership,
-	    'file' => '/var/www/vsite/test.txt'
+	    'file' => '/var/www/vsite/'.$slug.'.json'
     ];
   }
 
