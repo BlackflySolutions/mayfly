@@ -1,0 +1,7 @@
+[
+{
+  "name": "membership_vsite_export",
+  "label": "Export a membership vsite",
+  "class_name": "CRM_Mayfly_CivirulesAction_Membership_VsiteExport"
+}
+]
